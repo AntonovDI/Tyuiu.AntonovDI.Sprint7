@@ -2,15 +2,8 @@
 {
     partial class FormMain
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,127 +15,166 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            panel1 = new Panel();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            comboBox1 = new ComboBox();
-            label1 = new Label();
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            System.ComponentModel.ComponentResourceManager resources =
+                new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+
+            menuStripMain_ADI = new MenuStrip();
+            menuMenu_ADI = new ToolStripMenuItem();
+            menuAdd_ADI = new ToolStripMenuItem();
+            menuEdit_ADI = new ToolStripMenuItem();
+            menuDelete_ADI = new ToolStripMenuItem();
+            menuStatistic_ADI = new ToolStripMenuItem();
+            menuCharts_ADI = new ToolStripMenuItem();
+            menuFilter_ADI = new ToolStripMenuItem();
+            menuGuide_ADI = new ToolStripMenuItem();
+            menuAbout_ADI = new ToolStripMenuItem();
+            menuExit_ADI = new ToolStripMenuItem();
+
+            panelTop_ADI = new Panel();
+            labelTable_ADI = new Label();
+            comboBoxTable_ADI = new ComboBox();
+            labelSearch_ADI = new Label();
+            textBoxSearch_ADI = new TextBox();
+            buttonResetSearch_ADI = new Button();
+
+            dataGridViewMain_ADI = new DataGridView();
+
+            menuStripMain_ADI.SuspendLayout();
+            panelTop_ADI.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMain_ADI).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = SystemColors.ActiveBorder;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(button1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(800, 53);
-            panel1.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(620, 15);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(157, 23);
-            textBox1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label2.Location = new Point(551, 15);
-            label2.Name = "label2";
-            label2.Size = new Size(63, 21);
-            label2.TabIndex = 3;
-            label2.Text = "Поиск:";
-            // 
-            // comboBox1
-            // 
-            comboBox1.BackColor = SystemColors.Window;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(337, 15);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(157, 23);
-            comboBox1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label1.Location = new Point(257, 15);
-            label1.Name = "label1";
-            label1.Size = new Size(75, 21);
-            label1.TabIndex = 1;
-            label1.Text = "Таблица:";
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.ActiveBorder;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 204);
-            button1.ForeColor = SystemColors.ControlText;
-            button1.Image = Properties.Resources.cog;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(11, 6);
-            button1.Name = "button1";
-            button1.Padding = new Padding(5, 0, 15, 0);
-            button1.Size = new Size(132, 37);
-            button1.TabIndex = 0;
-            button1.Text = "Меню";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 53);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(800, 397);
-            dataGridView1.TabIndex = 1;
-            // 
-            // FormMain
-            // 
+
+            // ===== MenuStrip =====
+            menuStripMain_ADI.Items.AddRange(new ToolStripItem[] {
+                menuMenu_ADI
+            });
+            menuStripMain_ADI.Location = new Point(0, 0);
+            menuStripMain_ADI.Name = "menuStripMain_ADI";
+            menuStripMain_ADI.Size = new Size(900, 24);
+
+            menuMenu_ADI.DropDownItems.AddRange(new ToolStripItem[] {
+                menuAdd_ADI,
+                menuEdit_ADI,
+                menuDelete_ADI,
+                new ToolStripSeparator(),
+                menuStatistic_ADI,
+                menuCharts_ADI,
+                menuFilter_ADI,
+                new ToolStripSeparator(),
+                menuGuide_ADI,
+                menuAbout_ADI,
+                new ToolStripSeparator(),
+                menuExit_ADI
+            });
+            menuMenu_ADI.Text = "Меню";
+
+            menuAdd_ADI.Text = "Добавить";
+            menuEdit_ADI.Text = "Изменить";
+            menuDelete_ADI.Text = "Удалить";
+            menuStatistic_ADI.Text = "Статистика";
+            menuCharts_ADI.Text = "Диаграммы";
+            menuFilter_ADI.Text = "Фильтр";
+            menuGuide_ADI.Text = "Руководство";
+            menuAbout_ADI.Text = "О программе";
+            menuExit_ADI.Text = "Выход";
+
+            // ===== Panel Top =====
+            panelTop_ADI.BackColor = SystemColors.ControlLight;
+            panelTop_ADI.Dock = DockStyle.Top;
+            panelTop_ADI.Location = new Point(0, 24);
+            panelTop_ADI.Name = "panelTop_ADI";
+            panelTop_ADI.Size = new Size(900, 50);
+
+            panelTop_ADI.Controls.Add(labelTable_ADI);
+            panelTop_ADI.Controls.Add(comboBoxTable_ADI);
+            panelTop_ADI.Controls.Add(labelSearch_ADI);
+            panelTop_ADI.Controls.Add(textBoxSearch_ADI);
+            panelTop_ADI.Controls.Add(buttonResetSearch_ADI);
+
+            // ===== Label Table =====
+            labelTable_ADI.AutoSize = true;
+            labelTable_ADI.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            labelTable_ADI.Location = new Point(15, 15);
+            labelTable_ADI.Text = "Таблица:";
+
+            // ===== ComboBox =====
+            comboBoxTable_ADI.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxTable_ADI.Location = new Point(90, 14);
+            comboBoxTable_ADI.Size = new Size(150, 23);
+
+            // ===== Label Search =====
+            labelSearch_ADI.AutoSize = true;
+            labelSearch_ADI.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            labelSearch_ADI.Location = new Point(270, 15);
+            labelSearch_ADI.Text = "Поиск:";
+
+            // ===== TextBox Search =====
+            textBoxSearch_ADI.Location = new Point(335, 14);
+            textBoxSearch_ADI.Size = new Size(250, 23);
+
+            // ===== Reset Button =====
+            buttonResetSearch_ADI.Location = new Point(610, 12);
+            buttonResetSearch_ADI.Size = new Size(120, 27);
+            buttonResetSearch_ADI.Text = "Сбросить";
+            buttonResetSearch_ADI.UseVisualStyleBackColor = true;
+
+            // ===== DataGridView =====
+            dataGridViewMain_ADI.AllowUserToAddRows = false;
+            dataGridViewMain_ADI.AllowUserToDeleteRows = false;
+            dataGridViewMain_ADI.ReadOnly = true;
+            dataGridViewMain_ADI.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewMain_ADI.Dock = DockStyle.Fill;
+            dataGridViewMain_ADI.Location = new Point(0, 74);
+            dataGridViewMain_ADI.Name = "dataGridViewMain_ADI";
+            dataGridViewMain_ADI.Size = new Size(900, 476);
+
+            // ===== Form =====
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
-            Controls.Add(panel1);
+            ClientSize = new Size(900, 550);
+
+            Controls.Add(dataGridViewMain_ADI);
+            Controls.Add(panelTop_ADI);
+            Controls.Add(menuStripMain_ADI);
+
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStripMain_ADI;
             Name = "FormMain";
-            Text = "Оптовая база by Antonov";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Text = "Оптовая база";
+
+            menuStripMain_ADI.ResumeLayout(false);
+            menuStripMain_ADI.PerformLayout();
+            panelTop_ADI.ResumeLayout(false);
+            panelTop_ADI.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMain_ADI).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Panel panel1;
-        private Button button1;
-        private Label label2;
-        private ComboBox comboBox1;
-        private Label label1;
-        private TextBox textBox1;
-        private DataGridView dataGridView1;
+        private MenuStrip menuStripMain_ADI;
+        private ToolStripMenuItem menuMenu_ADI;
+        private ToolStripMenuItem menuAdd_ADI;
+        private ToolStripMenuItem menuEdit_ADI;
+        private ToolStripMenuItem menuDelete_ADI;
+        private ToolStripMenuItem menuStatistic_ADI;
+        private ToolStripMenuItem menuCharts_ADI;
+        private ToolStripMenuItem menuFilter_ADI;
+        private ToolStripMenuItem menuGuide_ADI;
+        private ToolStripMenuItem menuAbout_ADI;
+        private ToolStripMenuItem menuExit_ADI;
+
+        private Panel panelTop_ADI;
+        private Label labelTable_ADI;
+        private ComboBox comboBoxTable_ADI;
+        private Label labelSearch_ADI;
+        private TextBox textBoxSearch_ADI;
+        private Button buttonResetSearch_ADI;
+
+        private DataGridView dataGridViewMain_ADI;
     }
 }
