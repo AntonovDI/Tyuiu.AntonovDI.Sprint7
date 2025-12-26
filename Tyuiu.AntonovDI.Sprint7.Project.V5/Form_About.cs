@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Tyuiu.AntonovDI.Sprint7.Project.V5
@@ -15,6 +8,11 @@ namespace Tyuiu.AntonovDI.Sprint7.Project.V5
         public Form_About()
         {
             InitializeComponent();
+        }
+
+        private void buttonOk_ADI_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -7,9 +7,8 @@
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
+
             base.Dispose(disposing);
         }
 
@@ -28,6 +27,7 @@
             menuStatistic_ADI = new ToolStripMenuItem();
             menuCharts_ADI = new ToolStripMenuItem();
             menuFilter_ADI = new ToolStripMenuItem();
+            menuExport_ADI = new ToolStripMenuItem();
             menuGuide_ADI = new ToolStripMenuItem();
             menuAbout_ADI = new ToolStripMenuItem();
             menuExit_ADI = new ToolStripMenuItem();
@@ -62,6 +62,7 @@
                 menuStatistic_ADI,
                 menuCharts_ADI,
                 menuFilter_ADI,
+                menuExport_ADI,
                 new ToolStripSeparator(),
                 menuGuide_ADI,
                 menuAbout_ADI,
@@ -71,14 +72,34 @@
             menuMenu_ADI.Text = "Меню";
 
             menuAdd_ADI.Text = "Добавить";
+            menuAdd_ADI.Click += MenuAdd_ADI_Click;
+
             menuEdit_ADI.Text = "Изменить";
+            menuEdit_ADI.Click += MenuEdit_ADI_Click;
+
             menuDelete_ADI.Text = "Удалить";
+            menuDelete_ADI.Click += MenuDelete_ADI_Click;
+
             menuStatistic_ADI.Text = "Статистика";
+
             menuCharts_ADI.Text = "Диаграммы";
+            menuCharts_ADI.Click += MenuCharts_ADI_Click;
+
             menuFilter_ADI.Text = "Фильтр";
+            menuFilter_ADI.Click += MenuFilter_ADI_Click;
+
+            menuExport_ADI.Text = "Экспорт CSV";
+            menuExport_ADI.Click += MenuExport_ADI_Click;
+
             menuGuide_ADI.Text = "Руководство";
+            menuGuide_ADI.Click += MenuGuide_ADI_Click;
+
+
             menuAbout_ADI.Text = "О программе";
+            menuAbout_ADI.Click += MenuAbout_ADI_Click;
+
             menuExit_ADI.Text = "Выход";
+            menuExit_ADI.Click += MenuExit_ADI_Click;
 
             // ===== Panel Top =====
             panelTop_ADI.BackColor = SystemColors.ControlLight;
@@ -118,7 +139,6 @@
             buttonResetSearch_ADI.Location = new Point(610, 12);
             buttonResetSearch_ADI.Size = new Size(120, 27);
             buttonResetSearch_ADI.Text = "Сбросить";
-            buttonResetSearch_ADI.UseVisualStyleBackColor = true;
 
             // ===== DataGridView =====
             dataGridViewMain_ADI.AllowUserToAddRows = false;
@@ -128,21 +148,16 @@
                 DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewMain_ADI.Dock = DockStyle.Fill;
             dataGridViewMain_ADI.Location = new Point(0, 74);
-            dataGridViewMain_ADI.Name = "dataGridViewMain_ADI";
             dataGridViewMain_ADI.Size = new Size(900, 476);
 
             // ===== Form =====
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(900, 550);
-
             Controls.Add(dataGridViewMain_ADI);
             Controls.Add(panelTop_ADI);
             Controls.Add(menuStripMain_ADI);
 
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStripMain_ADI;
-            Name = "FormMain";
             Text = "Оптовая база";
 
             menuStripMain_ADI.ResumeLayout(false);
@@ -164,6 +179,7 @@
         private ToolStripMenuItem menuStatistic_ADI;
         private ToolStripMenuItem menuCharts_ADI;
         private ToolStripMenuItem menuFilter_ADI;
+        private ToolStripMenuItem menuExport_ADI;
         private ToolStripMenuItem menuGuide_ADI;
         private ToolStripMenuItem menuAbout_ADI;
         private ToolStripMenuItem menuExit_ADI;
