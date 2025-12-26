@@ -12,8 +12,8 @@ namespace Tyuiu.AntonovDI.Sprint7.Project.V5
     {
         private readonly DataService ds_ADI = new DataService();
 
-        private DataTable table_ADI;          // текущая таблица
-        private DataTable sellersTable_ADI;   // таблица продавцов (хранится всегда)
+        private DataTable table_ADI;          
+        private DataTable sellersTable_ADI;   
 
         private const string pathProducts_ADI =
             @"C:\Users\anton\Desktop\Тиу\source\repos\Tyuiu.AntonovDI.Sprint7\Files\Commodities.csv";
@@ -34,8 +34,6 @@ namespace Tyuiu.AntonovDI.Sprint7.Project.V5
             BindEvents_ADI();
         }
 
-        // ================== ИНИЦИАЛИЗАЦИЯ ==================
-
         private void InitComboBox_ADI()
         {
             comboBoxTable_ADI.Items.Clear();
@@ -55,11 +53,6 @@ namespace Tyuiu.AntonovDI.Sprint7.Project.V5
             menuExit_ADI.Click += MenuExit_ADI_Click;
         }
 
-        // ================== ЗАГРУЗКА ==================
-
-        /// <summary>
-        /// Загружается один раз и используется везде
-        /// </summary>
         private void LoadSellersOnce_ADI()
         {
             sellersTable_ADI = ds_ADI.LoadCsv(
@@ -91,8 +84,6 @@ namespace Tyuiu.AntonovDI.Sprint7.Project.V5
             dataGridViewMain_ADI.DataSource = table_ADI;
         }
 
-        // ================== СОХРАНЕНИЕ ==================
-
         private void SaveCurrentTable()
         {
             if (comboBoxTable_ADI.Text == "Товары")
@@ -101,7 +92,6 @@ namespace Tyuiu.AntonovDI.Sprint7.Project.V5
                 ds_ADI.SaveTableToCsv(table_ADI, pathSellers_ADI);
         }
 
-        // ================== ДОБАВЛЕНИЕ ==================
 
         private void MenuAdd_ADI_Click(object sender, EventArgs e)
         {
@@ -120,7 +110,6 @@ namespace Tyuiu.AntonovDI.Sprint7.Project.V5
             }
         }
 
-        // ================== ИЗМЕНЕНИЕ ==================
 
         private void MenuEdit_ADI_Click(object sender, EventArgs e)
         {
@@ -145,8 +134,6 @@ namespace Tyuiu.AntonovDI.Sprint7.Project.V5
             }
         }
 
-        // ================== УДАЛЕНИЕ ==================
-
         private void MenuDelete_ADI_Click(object sender, EventArgs e)
         {
             if (!(dataGridViewMain_ADI.CurrentRow?.DataBoundItem is DataRowView drv))
@@ -162,8 +149,6 @@ namespace Tyuiu.AntonovDI.Sprint7.Project.V5
             table_ADI.Rows.Remove(drv.Row);
             SaveCurrentTable();
         }
-
-        // ================== ПОИСК ==================
 
         private void TextBoxSearch_ADI_TextChanged(object sender, EventArgs e)
         {
@@ -181,8 +166,6 @@ namespace Tyuiu.AntonovDI.Sprint7.Project.V5
             dataGridViewMain_ADI.DataSource = table_ADI;
         }
 
-        // ================== ПЕРЕКЛЮЧЕНИЕ ТАБЛИЦ ==================
-
         private void ComboBoxTable_ADI_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBoxSearch_ADI.Clear();
@@ -199,7 +182,6 @@ namespace Tyuiu.AntonovDI.Sprint7.Project.V5
             }
         }
 
-        // ================== СТАТИСТИКА ==================
 
         private void MenuStatistic_ADI_Click(object sender, EventArgs e)
         {
@@ -271,8 +253,6 @@ namespace Tyuiu.AntonovDI.Sprint7.Project.V5
                 MessageBox.Show("Файл сохранён");
             }
         }
-
-        // ================== ПРОЧЕЕ ==================
 
         private void MenuGuide_ADI_Click(object sender, EventArgs e)
         {

@@ -1,3 +1,62 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Text;
-namespace Tyuiu.AntonovDI.Sprint7.Project.V5.Lib { public class DataService { public DataTable LoadCsv(string path, string[] columnNames) { DataTable table = new DataTable(); foreach (string column in columnNames) { table.Columns.Add(column); } string[] lines = File.ReadAllLines(path); foreach (string line in lines) { string[] values = line.Split(','); table.Rows.Add(values); } return table; } public void SaveTableToCsv(DataTable table, string path) { List<string> lines = new List<string>(); foreach (DataRow row in table.Rows) { string line = string.Join(",", row.ItemArray); lines.Add(line); } File.WriteAllLines(path, lines, Encoding.UTF8); } public DataView Search(DataTable table, string columnName, string searchText) { DataView view = table.DefaultView; if (string.IsNullOrWhiteSpace(searchText)) { view.RowFilter = ""; } else { view.RowFilter = $"{columnName} LIKE '%{searchText}%'"; } return view; } } }
+
+namespace Tyuiu.AntonovDI.Sprint7.Project.V5.Lib
+{
+    public class DataService
+    {
+        public DataTable LoadCsv(string path, string[] columnNames)
+        {
+            DataTable table = new DataTable();
+
+            foreach (string column in columnNames)
+            {
+                table.Columns.Add(column);
+            }
+
+            string[] lines = File.ReadAllLines(path);
+
+            foreach (string line in lines)
+            {
+                string[] values = line.Split(',');
+                table.Rows.Add(values);
+            }
+
+            return table;
+        }
+
+        public void SaveTableToCsv(DataTable table, string path)
+        {
+            List<string> lines = new List<string>();
+
+            foreach (DataRow row in table.Rows)
+            {
+                string line = string.Join(",", row.ItemArray);
+                lines.Add(line);
+            }
+
+            File.WriteAllLines(path, lines, Encoding.UTF8);
+        }
+
+        public DataView Search(
+            DataTable table,
+            string columnName,
+            string searchText)
+        {
+            DataView view = table.DefaultView;
+
+            if (string.IsNullOrWhiteSpace(searchText))
+            {
+                view.RowFilter = "";
+            }
+            else
+            {
+                view.RowFilter = $"{columnName} LIKE '%{searchText}%'";
+            }
+
+            return view;
+        }
+    }
+}
